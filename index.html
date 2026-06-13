@@ -37,7 +37,39 @@
 .accordion-item:hover{transform:translateY(-2px);}
 .exam-title{display:flex;align-items:center;gap:12px;}
 .exam-icon{font-size:2rem;flex-shrink:0;display:inline-flex;gap:200px;}
-</style>
+		<!--ALINEAR BOTONES-->
+  /* Contenedor para poner botones en línea */
+    .botones-container {
+      display: flex;              /* Pone elementos en línea */
+      gap: 110px;                  /* Separación entre botones (15px) */
+      justify-content: space-between;        /* Alinea verticalmente */
+      text-decoration: none;
+    }
+  
+  
+  			<!--ESTILO BOTONES TIPO ENLACE-->
+   /* Botones de enlace - ANARANJADO y diferente */
+    .btn-link {
+      background: #ff9c14;        /* Anaranjado (diferente del azul) */
+      color: #fff;
+      font-weight: 600;
+      padding: 10px 24px;         /* Tamaño pequeño */
+      font-size: 0.9rem;
+      border-radius: 8px;
+      border: none;
+      text-decoration: none;     /* Sin subrayado */
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 156, 20, 0.4); /* Sombra extra para resaltar */
+      transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-link:hover {
+      background: #e88d0c;        /* Anaranjado más oscuro */
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 156, 20, 0.5);
+    }
+  
+  </style>
 </head>
 <body>
 <a class="sr-only" href="#contenido">Saltar al contenido</a>
@@ -58,6 +90,13 @@
   </svg>
 </div>
     <div class="subtitle">Consulta la preparación, indicaciones, procedimiento y precauciones de cada estudio de TAC. Haz el cuestionario universal para saber si estás preparado.</div>
+  						
+  			<!--BOTONES DE ENLACES A OTRAS PAGINAS-->
+  <div class="subtitle">Aquí también podrá acceder a otras guía pulsando en los siguientes enlaces:</p>
+      				
+     <div class="botones-container">
+       <button class="btn-link" onclick="window.location.href='https://nuclear-man.github.io/guia-RM/'">GUIA RESONANCIA</button>
+    <button class="btn-link" onclick="window.location.href='https://nuclear-man.github.io/Estudios-Medicina-Nuclear/'">GUIA MEDICINA NUCLEAR</button>
   </div>
 </header>
 <main id="contenido" class="layout">

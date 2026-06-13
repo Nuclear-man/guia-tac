@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="header-mri" aria-label="Imagen de TAC">
-      <img alt=“Imagenes/TAC.png” src=“Equipo TAC”>
+      <img alt=“Imágenes/TAC.png” src=“Equipo TAC”>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260">
         <text x="200" y="240" text-anchor="middle" font-family="Arial" font-size="18" fill="#6e6e73">Equipo de TAC</text>
       </svg>
@@ -181,13 +181,44 @@
   </div>
 </main>
 <footer class="page-footer"><p>Esta guía pretende ayudarte a entender mejor en qué consiste tu prueba de TAC y cómo prepararte. No sustituye la evaluación individual de tu médico ni las instrucciones de tu centro de radiología.</p></footer>
-<script>
+
+  <p>
+<footer style="background: #333; color: white; padding: 15px; text-align: center; font-size: 14px;">
+    <p style="margin: 0;">
+        © 2026 <strong>Enrique Molina</strong> | Técnico de Medicina Nuclear | 
+        <a href="https://www.youtube.com/@enmoga1973" style="color: #4CAF50; text-decoration: none;">Canal de YouTube</a>
+    </p>
+    <p style="margin: 5px 0 0 0; font-size: 12px; color: #bdc3c7;">
+        Todos los derechos reservados | <a href="/aviso-legal" style="color: #bdc3c7;">Aviso Legal</a>
+    </p>
+  
+  <script>
 function mostrar(id){document.querySelectorAll('.panel').forEach(panel=>{panel.style.display='none';});const destino=document.getElementById(id);if(destino){destino.style.display='block';destino.scrollIntoView({behavior:'smooth',block:'start'});}}
 function volver(){document.querySelectorAll('.panel').forEach(panel=>{panel.style.display='none';});window.scrollTo({top:0,behavior:'smooth'});}
 function limpiarFiltro(){document.getElementById('buscador').value='';filtrar();}
 function filtrar(){const q=document.getElementById('buscador').value.toLowerCase().trim();document.querySelectorAll('.prueba').forEach(b=>{const ok=b.textContent.toLowerCase().includes(q);b.style.display=ok?'block':'none';});}
 function alternarZoom(elemento){elemento.classList.toggle('ampliada');}
 function evaluarCuestionario(){ const radiosSi=document.querySelectorAll('.answer-row input[value="si"]:checked'); const total=document.querySelectorAll('.answer-row').length; const contestadas=document.querySelectorAll('.answer-row input:checked').length; const panel=document.getElementById('resultado-cuestionario'); if(contestadas < total){ panel.className='resultado-cuestionario resultado-alerta'; panel.innerHTML='⚠️ Debe responder todos los apartados del cuestionario antes de continuar.'; return; } if(radiosSi.length>0){ panel.className='resultado-cuestionario resultado-alerta'; panel.innerHTML='🛑 IMPORTANTE: Ha indicado una o más respuestas afirmativas. Debe comunicar estas incidencias al personal de Radiología ANTES de realizar la resonancia magnética para que puedan valorar las medidas necesarias.'; }else{ panel.className='resultado-cuestionario resultado-ok'; panel.innerHTML='✅ No se han detectado incidencias en el cuestionario. Puede realizar el TAC siguiendo las instrucciones indicadas por su centro.'; }}
-</script>
+
+  <!--Función que añade o quita la clase 'ampliada’-->
+    function alternarZoom(elemento) {
+      elemento.classList.toggle('ampliada');
+    }
+<!--Proteger el footer automáticamente-->
+const observer = new MutationObserver(() => {
+    if (!document.querySelector('footer strong')) {
+        const footer = document.querySelector('footer');
+        if (footer) footer.innerHTML = '<p style="margin:0;text-align:center;">© 2026 <strong>ENMOGA «En compañía y sin rumbo»</strong> - Todos los derechos reservados</p>';
+    }
+});
+observer.observe(document.body, { childList: true, subtree: true });
+
+<!-- Bloquear clic derecho y atajos-->
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'u')) e.preventDefault();
+});
+  
+  </script>
 </body>
 </html>

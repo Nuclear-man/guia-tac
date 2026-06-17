@@ -68,10 +68,35 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(255, 156, 20, 0.5);
     }
+					/*BOTON FLOTANTE SUBIR*/
+.btn-subir {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background-color: #01696f;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(1, 105, 111, 0.35);
+  z-index: 1000;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-subir:hover {
+  background-color: #0c4e54;
+  transform: translateY(-2px);
+}
   
   </style>
 </head>
-<body>
+<body id="top">
 <a class="sr-only" href="#contenido">Saltar al contenido</a>
 <div class="container">
 <header class="header">
@@ -79,7 +104,7 @@
     <div class="brand" aria-label="Guía de TAC">
       <div class="brand-mark">
 		  <!--<svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="18" width="44" height="28" rx="14" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="32" r="6" fill="currentColor" opacity=".16"/><path d="M18 32h10M36 32h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>-->
-	  <img src="./logoa.png"alt="logo" width="100" height="100" loading="lazy" />
+	  <img src="./imagenes/logoa.png"alt="logo" width="100" height="100" loading="lazy" />
 	  </div>
       <div class="brand-text">
         <h1 class="brand-title">Tomografía Axial Computerizada (TAC)</h1>
@@ -243,10 +268,11 @@
     </section>
   </div>
 </main>
-<footer class="page-footer"><p>Esta guía pretende ayudarte a entender mejor en qué consiste tu prueba de TAC y cómo prepararte. No sustituye la evaluación individual de tu médico ni las instrucciones de tu centro de radiología.</p></footer>
-
-  <p>
-<footer style="background: #333; color: white; padding: 15px; text-align: center; font-size: 14px;">
+<footer class="page-footer">
+	<p>Esta guía pretende ayudarte a entender mejor en qué consiste tu prueba de TAC y cómo prepararte. 
+		No sustituye la evaluación individual de tu médico ni las instrucciones de tu centro de radiología.</p>
+<p>
+<div style="background: #333; color: white; padding: 15px; text-align: center; font-size: 14px;">
     <p style="margin: 0;">
         © 2026 <strong>Enrique Molina</strong> | Técnico de Medicina Nuclear | 
         <a href="https://www.youtube.com/@enmoga1973" style="color: #4CAF50; text-decoration: none;">Canal de YouTube</a>
@@ -254,7 +280,8 @@
     <p style="margin: 5px 0 0 0; font-size: 12px; color: #bdc3c7;">
         Todos los derechos reservados | <a href="/aviso-legal" style="color: #bdc3c7;">Aviso Legal</a>
     </p>
-  
+</div>
+</footer> 
   <script>
 function mostrar(id){document.querySelectorAll('.panel').forEach(panel=>{panel.style.display='none';});const destino=document.getElementById(id);if(destino){destino.style.display='block';destino.scrollIntoView({behavior:'smooth',block:'start'});}}
 function volver(){document.querySelectorAll('.panel').forEach(panel=>{panel.style.display='none';});window.scrollTo({top:0,behavior:'smooth'});}
@@ -281,7 +308,7 @@ document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('keydown', e => {
     if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'u')) e.preventDefault();
 });
-  
-  </script>
+   </script>
+</main><a href="#top" class="btn-subir" aria-label="Subir al inicio">↑</a>
 </body>
 </html>
